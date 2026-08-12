@@ -866,15 +866,13 @@
 			}
 		}
 
-		/* Desktop hint sits in a clear pocket of the artwork (lower-right,
-		   clear of the logos, the character and the "Power Reimagined"
-		   lockup) instead of dead-center, since the cover art has no clean
-		   empty band running the full width at any height. */
+		/* Desktop hint sits dead-center on the artwork for maximum visibility. */
 		#tearHintDesktop {
-			left: auto;
-			right: 4%;
-			bottom: 9%;
-			transform: none;
+			left: 50%;
+			top: 50%;
+			right: auto;
+			bottom: auto;
+			transform: translate(-50%, -50%);
 			animation: tear-hint-pulse-desktop 1.8s ease-in-out infinite;
 		}
 
@@ -888,12 +886,12 @@
 			0%,
 			100% {
 				opacity: 0.95;
-				transform: scale(1);
+				transform: translate(-50%, -50%) scale(1);
 			}
 
 			50% {
 				opacity: 0.6;
-				transform: scale(1.04);
+				transform: translate(-50%, -50%) scale(1.04);
 			}
 		}
 
@@ -1018,7 +1016,55 @@
 				text-align: center !important
 			}
 		}
+
+		/* Scroll-triggered entrance animations for every section below the
+		   hero. Elements start faded/offset and settle into place the first
+		   time they scroll into view; each fires once. */
+		.reveal {
+			opacity: 0;
+			transform: translateY(32px);
+			transition: opacity 0.5s ease-in-out,
+				transform 0.5s ease-in-out;
+			will-change: opacity, transform;
+		}
+
+		.reveal.is-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.reveal-d1 {
+			transition-delay: 0s;
+		}
+
+		.reveal-d2 {
+			transition-delay: 0.09s;
+		}
+
+		.reveal-d3 {
+			transition-delay: 0.18s;
+		}
+
+		.reveal-d4 {
+			transition-delay: 0.27s;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.reveal {
+				opacity: 1;
+				transform: none;
+				transition: none;
+			}
+		}
 	</style>
+	<noscript>
+		<style>
+			.reveal {
+				opacity: 1 !important;
+				transform: none !important;
+			}
+		</style>
+	</noscript>
 </head>
 
 <body>
@@ -1054,12 +1100,12 @@
 						<div class="spacer" style="height:60px;"></div>
 					</div>
 				</div>
-				<div class="bee-col bee-col-2 bee-col-w3">
+				<div class="bee-col bee-col-2 bee-col-w3 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h1><strong><span style="color: #0047af;">E</span>ast<br /><span style="color: #0047af;">A</span>sia <br /><span style="color: #0047af;">R</span>egional <br /><span style="color: #0047af;">C</span>onference</strong> </h1>
 					</div>
 				</div>
-				<div class="bee-col bee-col-3 bee-col-w5">
+				<div class="bee-col bee-col-3 bee-col-w5 reveal reveal-d2">
 					<div class="bee-block bee-block-1 bee-paragraph">
 						<p><strong>EARC</strong> is the<strong> IFES East Asia Student Conference</strong> held every three years. College students from different countries with different cultures and situations come together, and will worship God, study the Bible and have small group meetings. It will be a special opportunity for fellowship and learning together!</p>
 					</div>
@@ -1073,29 +1119,29 @@
 		</div>
 		<div class="bee-row bee-row-4">
 			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w3">
+				<div class="bee-col bee-col-1 bee-col-w3 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-image"><img alt="" class="bee-center bee-autowidth" src="https://media.beefree.cloud/pub/bfra/s4npm4ba/v0p/w40/acu/472719657_122165362694047104_4753501629588064071_n.jpg" style="max-width:296px;" title="" /></div>
 				</div>
-				<div class="bee-col bee-col-2 bee-col-w3">
+				<div class="bee-col bee-col-2 bee-col-w3 reveal reveal-d2">
 					<div class="bee-block bee-block-1 bee-image"><img alt="" class="bee-center bee-autowidth" src="https://media.beefree.cloud/pub/bfra/s4npm4ba/ees/tyq/79g/472848080_122165368046047104_2466142498394603839_n_1.jpg" style="max-width:296px;" title="" /></div>
 				</div>
-				<div class="bee-col bee-col-3 bee-col-w3">
+				<div class="bee-col bee-col-3 bee-col-w3 reveal reveal-d3">
 					<div class="bee-block bee-block-1 bee-image"><img alt="" class="bee-center bee-autowidth" src="https://media.beefree.cloud/pub/bfra/s4npm4ba/oua/6vv/2d1/472751690_122165368730047104_1207600232955487603_n.jpg" style="max-width:296px;" title="" /></div>
 				</div>
-				<div class="bee-col bee-col-4 bee-col-w3">
+				<div class="bee-col bee-col-4 bee-col-w3 reveal reveal-d4">
 					<div class="bee-block bee-block-1 bee-image"><img alt="" class="bee-center bee-autowidth" src="https://media.beefree.cloud/pub/bfra/s4npm4ba/0wr/fsm/6jg/472716822_122165368472047104_3948581425067855580_n_1.jpg" style="max-width:296px;" title="" /></div>
 				</div>
 			</div>
 		</div>
 		<div class="bee-row bee-row-5">
 			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w3">
+				<div class="bee-col bee-col-1 bee-col-w3 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-spacer">
 						<div class="spacer" style="height:60px;"></div>
 					</div>
 					<div class="bee-block bee-block-2 bee-image bee-mobile_hide"><img alt="" class="bee-center bee-autowidth" src="https://media.beefree.cloud/pub/bfra/s4npm4ba/18j/son/noe/power%20elements-02.png" style="max-width:296px;" title="" /></div>
 				</div>
-				<div class="bee-col bee-col-2 bee-col-w6">
+				<div class="bee-col bee-col-2 bee-col-w6 reveal reveal-d2">
 					<div class="bee-block bee-block-1 bee-paragraph">
 						<p>EARC 2027</p>
 					</div>
@@ -1111,7 +1157,7 @@
 						<p>2027 summer, let's tear open the world's idea of power together — and see what's really inside.</p>
 					</div>
 				</div>
-				<div class="bee-col bee-col-3 bee-col-w3">
+				<div class="bee-col bee-col-3 bee-col-w3 reveal reveal-d3">
 					<div class="bee-block bee-block-1 bee-image bee-desktop_hide"><img alt="" class="bee-center bee-autowidth" src="https://media.beefree.cloud/pub/bfra/s4npm4ba/vu3/t48/vm6/power%20elements-06.png" style="max-width:296px;" title="" /></div>
 					<div class="bee-block bee-block-2 bee-image bee-mobile_hide"><img alt="" class="bee-center bee-autowidth" src="https://media.beefree.cloud/pub/bfra/s4npm4ba/8m0/4p2/djv/power%20elements-03.png" style="max-width:296px;" title="" /></div>
 				</div>
@@ -1119,7 +1165,7 @@
 		</div>
 		<div class="bee-row bee-row-6">
 			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w4">
+				<div class="bee-col bee-col-1 bee-col-w4 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h3><span class="tinyMce-placeholder">Date</span> </h3>
 					</div>
@@ -1127,7 +1173,7 @@
 						<p>July 20–26, 2027</p>
 					</div>
 				</div>
-				<div class="bee-col bee-col-2 bee-col-w4">
+				<div class="bee-col bee-col-2 bee-col-w4 reveal reveal-d2">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h3><span class="tinyMce-placeholder">Location</span> </h3>
 					</div>
@@ -1135,7 +1181,7 @@
 						<p>Chientan Overseas Youth Activity Center, <br />Taipei, Taiwan</p>
 					</div>
 				</div>
-				<div class="bee-col bee-col-3 bee-col-w4">
+				<div class="bee-col bee-col-3 bee-col-w4 reveal reveal-d3">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h3><span class="tinyMce-placeholder">Registration</span> </h3>
 					</div>
@@ -1147,7 +1193,7 @@
 		</div>
 		<div class="bee-row bee-row-7">
 			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w12">
+				<div class="bee-col bee-col-1 bee-col-w12 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h1><span class="tinyMce-placeholder">Speakers</span> </h1>
 					</div>
@@ -1156,7 +1202,7 @@
 		</div>
 		<div class="bee-row bee-row-8">
 			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w3">
+				<div class="bee-col bee-col-1 bee-col-w3 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-paragraph">
 						<p>Bible Exposition</p>
 					</div>
@@ -1168,7 +1214,7 @@
 						<p>former Taiwan CEF Staff</p>
 					</div>
 				</div>
-				<div class="bee-col bee-col-2 bee-col-w3">
+				<div class="bee-col bee-col-2 bee-col-w3 reveal reveal-d2">
 					<div class="bee-block bee-block-1 bee-paragraph">
 						<p>Plenary 1</p>
 					</div>
@@ -1188,7 +1234,7 @@
 						<p>Thailand</p>
 					</div>
 				</div>
-				<div class="bee-col bee-col-3 bee-col-w3">
+				<div class="bee-col bee-col-3 bee-col-w3 reveal reveal-d3">
 					<div class="bee-block bee-block-1 bee-paragraph">
 						<p>Plenary 2</p>
 					</div>
@@ -1211,7 +1257,7 @@
 						<div class="spacer" style="height:60px;"></div>
 					</div>
 				</div>
-				<div class="bee-col bee-col-4 bee-col-w3">
+				<div class="bee-col bee-col-4 bee-col-w3 reveal reveal-d4">
 					<div class="bee-block bee-block-1 bee-paragraph">
 						<p>Plenary 3</p>
 					</div>
@@ -1235,7 +1281,7 @@
 		</div>
 		<div class="bee-row bee-row-9 bee-mobile_hide">
 			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w4">
+				<div class="bee-col bee-col-1 bee-col-w4 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h1><span class="tinyMce-placeholder">Streamlined <br />Schedule</span> </h1>
 					</div>
@@ -1243,7 +1289,7 @@
 						<div class="bee-button-content" id="scheduleSeeMoreDesktop" role="button" tabindex="0" aria-label="See more days" style="font-size: 17px; display: inline-block;"><span style="word-break: break-word; font-size: 17px; line-height: 120%; letter-spacing: normal;">→</span><span style="word-break: break-word; font-size: 17px; line-height: 120%; letter-spacing: normal;">SEE MORE</span></div>
 					</div>
 				</div>
-				<div class="bee-col bee-col-2 bee-col-w8 schedule-viewport" id="scheduleViewportDesktop">
+				<div class="bee-col bee-col-2 bee-col-w8 schedule-viewport reveal reveal-d2" id="scheduleViewportDesktop">
 					<div class="schedule-track" id="scheduleTrackDesktop">
 						<div class="schedule-day">
 							<div class="bee-block bee-block-1 bee-heading">
@@ -1374,7 +1420,7 @@
 		</div>
 		<div class="bee-row bee-row-10 bee-desktop_hide">
 			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w4">
+				<div class="bee-col bee-col-1 bee-col-w4 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h1><span class="tinyMce-placeholder">Streamlined <br />Schedule</span> </h1>
 					</div>
@@ -1382,7 +1428,7 @@
 						<div class="bee-button-content" id="scheduleSeeMoreMobile" role="button" tabindex="0" aria-label="See more days" style="font-size: 17px; display: inline-block;"><span style="word-break: break-word; font-size: 17px; line-height: 120%; letter-spacing: normal;">→</span><span style="word-break: break-word; font-size: 17px; line-height: 120%; letter-spacing: normal;">SEE MORE</span></div>
 					</div>
 				</div>
-				<div class="bee-col bee-col-2 bee-col-w8 schedule-viewport" id="scheduleViewportMobile">
+				<div class="bee-col bee-col-2 bee-col-w8 schedule-viewport reveal reveal-d2" id="scheduleViewportMobile">
 					<div class="schedule-track" id="scheduleTrackMobile">
 						<div class="schedule-day">
 							<div class="bee-block bee-block-1 bee-heading">
@@ -1527,7 +1573,7 @@
 						<div class="spacer" style="height:60px;"></div>
 					</div>
 				</div>
-				<div class="bee-col bee-col-2 bee-col-w5">
+				<div class="bee-col bee-col-2 bee-col-w5 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h1><span class="tinyMce-placeholder">Workshop</span> </h1>
 					</div>
@@ -1537,7 +1583,7 @@
 					</div>
 					<div class="bee-block bee-block-3 bee-button"><a class="bee-button-content" href="/" style="font-size: 16px; display: inline-block;" target="_blank"><span style="word-break: break-word; font-size: 16px; line-height: 200%; letter-spacing: normal;">View Full Schedule</span></a></div>
 				</div>
-				<div class="bee-col bee-col-3 bee-col-w5">
+				<div class="bee-col bee-col-3 bee-col-w5 reveal reveal-d2">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h1><span class="tinyMce-placeholder">Outing</span> </h1>
 					</div>
@@ -1557,10 +1603,10 @@
 		<div class="bee-row bee-row-15">
 			<div class="bee-row-content">
 				<div class="bee-col bee-col-1 bee-col-w12">
-					<div class="bee-block bee-block-0 bee-heading">
+					<div class="bee-block bee-block-0 bee-heading reveal reveal-d1">
 						<h1><span class="tinyMce-placeholder">Contact Us</span></h1>
 					</div>
-					<div class="bee-block bee-block-1 bee-social">
+					<div class="bee-block bee-block-1 bee-social reveal reveal-d2">
 						<div class="content"><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.facebook.com/profile.php?id=61592580462582" target="_self"><img alt="Facebook" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/facebook@2x.png" title="facebook" /></a></span><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.instagram.com/earc2027" target="_self"><img alt="Instagram" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" title="instagram" /></a></span></div>
 					</div>
 					<div class="bee-block bee-block-2 bee-spacer">
@@ -1618,6 +1664,33 @@
 
 	setupScheduleCarousel("scheduleViewportDesktop", "scheduleTrackDesktop", "scheduleSeeMoreDesktop", 2);
 	setupScheduleCarousel("scheduleViewportMobile", "scheduleTrackMobile", "scheduleSeeMoreMobile", 1);
+})();
+</script>
+<script>
+(function () {
+	"use strict";
+
+	// Scroll entrance animations: reveal ".reveal" elements the first time
+	// each scrolls into view, then stop watching it. Falls back to showing
+	// everything immediately if IntersectionObserver is unavailable.
+	var targets = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+	if (!targets.length) { return; }
+
+	if (!("IntersectionObserver" in window)) {
+		targets.forEach(function (el) { el.classList.add("is-visible"); });
+		return;
+	}
+
+	var io = new IntersectionObserver(function (entries) {
+		entries.forEach(function (entry) {
+			if (entry.isIntersecting) {
+				entry.target.classList.add("is-visible");
+				io.unobserve(entry.target);
+			}
+		});
+	}, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+	targets.forEach(function (el) { io.observe(el); });
 })();
 </script>
 <script>

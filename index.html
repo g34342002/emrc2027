@@ -294,6 +294,13 @@
 			text-align: center
 		}
 
+		@media (min-width: 769px) {
+			.bee-row-5 .bee-col-2 .bee-block-2 h1 {
+				font-size: 34px;
+				white-space: nowrap;
+			}
+		}
+
 		.bee-row-7 .bee-col-1 .bee-block-1 h1 {
 			color: #0047af;
 			direction: ltr;
@@ -1086,6 +1093,239 @@
 				transition: none;
 			}
 		}
+
+		/* ---------- Schedule table (redesigned) ---------- */
+		.bee-row-9 .bee-col-1 {
+			padding: 10px 20px;
+		}
+
+		.bee-row-9 .bee-col-1 .bee-block-1 {
+			text-align: center;
+			padding: 10px 20px;
+		}
+
+		.bee-row-9 .bee-col-1 .bee-block-1 h1 {
+			text-align: center;
+		}
+
+		.schedule-table-wrap {
+			width: 100%;
+			overflow-x: auto;
+			padding: 10px 10px 20px;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.schedule-table {
+			width: 100%;
+			max-width: 1040px;
+			margin: 24px auto 0;
+			border-collapse: separate;
+			border-spacing: 0;
+			font-family: "Lato", Tahoma, Verdana, Segoe, sans-serif;
+			color: #ffffff;
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 16px;
+			overflow: hidden;
+		}
+
+		.schedule-table th {
+			color: #c7f44a;
+			font-size: 15px;
+			font-weight: 900;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			text-align: left;
+			padding: 16px 18px;
+			background: rgba(199, 244, 74, 0.12);
+			border-bottom: 2px solid #c7f44a;
+			white-space: nowrap;
+		}
+
+		.schedule-table td {
+			padding: 18px;
+			font-size: 18px;
+			font-weight: 600;
+			line-height: 1.5;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+			vertical-align: top;
+			text-align: left;
+			color: #ffffff;
+		}
+
+		.schedule-table th:first-child,
+		.schedule-table td:first-child {
+			padding-left: 20px;
+		}
+
+		@media (min-width: 769px) {
+			.schedule-table th:nth-child(2),
+			.schedule-table th:nth-child(3),
+			.schedule-table th:nth-child(4),
+			.schedule-table td:nth-child(2),
+			.schedule-table td:nth-child(3),
+			.schedule-table td:nth-child(4) {
+				border-left: 1px solid rgba(255, 255, 255, 0.14);
+			}
+
+			.schedule-table tbody tr:nth-child(even) {
+				background: rgba(255, 255, 255, 0.04);
+			}
+
+			.schedule-table tbody tr:hover {
+				background: rgba(199, 244, 74, 0.08);
+			}
+		}
+
+		.schedule-table tbody tr:last-child td {
+			border-bottom: none;
+		}
+
+		.schedule-day-cell {
+			white-space: nowrap;
+		}
+
+		.schedule-day-cell .day-num {
+			display: inline-block;
+			background: #c7f44a;
+			color: #0047af;
+			font-weight: 900;
+			font-size: 15px;
+			letter-spacing: 0.5px;
+			padding: 5px 14px;
+			border-radius: 20px;
+		}
+
+		.schedule-day-cell .schedule-date {
+			display: block;
+			font-weight: 700;
+			font-size: 14px;
+			color: rgba(255, 255, 255, 0.75);
+			margin-top: 7px;
+		}
+
+		.event-label {
+			display: block;
+			font-size: 12px;
+			font-weight: 800;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			color: #c7f44a;
+			margin-bottom: 5px;
+		}
+
+		.event-title {
+			display: block;
+			font-size: 19px;
+			font-weight: 800;
+			color: #ffffff;
+			line-height: 1.35;
+		}
+
+		.schedule-empty {
+			color: rgba(255, 255, 255, 0.32);
+			font-weight: 400;
+		}
+
+		@media (max-width: 768px) {
+			.bee-row-9 .bee-col-1 .bee-block-1 {
+				text-align: center;
+				padding: 10px 20px;
+			}
+
+			.bee-row-9 .bee-col-1 .bee-block-1 h1 {
+				text-align: center;
+			}
+
+			.schedule-table-wrap {
+				overflow-x: visible;
+				padding: 10px 4px 20px;
+			}
+
+			.schedule-table {
+				width: 100%;
+				border: none;
+			}
+
+			.schedule-table thead {
+				display: none;
+			}
+
+			.schedule-table tbody {
+				display: block;
+			}
+
+			.schedule-table tr {
+				display: block;
+				padding: 14px 12px 16px;
+				margin-bottom: 10px;
+				background: rgba(255, 255, 255, 0.06);
+				border-radius: 12px;
+				border-bottom: none;
+			}
+
+			.schedule-table tbody tr:last-child {
+				margin-bottom: 0;
+			}
+
+			.schedule-table td {
+				display: block;
+				width: 100%;
+				padding: 10px 0;
+				border-bottom: none;
+				font-size: 16px;
+				text-align: center;
+			}
+
+			.schedule-table td[data-label] + td[data-label] {
+				border-top: 1px solid rgba(255, 255, 255, 0.12);
+				margin-top: 2px;
+			}
+
+			.schedule-table td[data-label]::before {
+				content: attr(data-label);
+				display: block;
+				color: #c7f44a;
+				background: transparent;
+				font-weight: 900;
+				font-size: 12px;
+				letter-spacing: 0.5px;
+				text-transform: uppercase;
+				line-height: 1.4;
+				margin: 0 0 6px;
+			}
+
+			.schedule-table td.schedule-day-cell {
+				padding: 0 0 10px;
+				margin-bottom: 8px;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+				font-size: 18px;
+				text-align: center;
+			}
+
+			.schedule-day-cell .day-num {
+				font-size: 18px;
+				padding: 6px 16px;
+			}
+
+			.schedule-day-cell .schedule-date {
+				display: inline;
+				margin-top: 0;
+				margin-left: 10px;
+				font-size: 15px;
+			}
+
+			.event-label {
+				color: rgba(255, 255, 255, 0.6);
+				font-weight: 700;
+				margin-top: 7px;
+				margin-bottom: 4px;
+			}
+
+			.bee-row-5 .bee-col-1 .bee-block-1.bee-spacer .spacer {
+				height: 12px !important;
+			}
+		}
+
 	</style>
 	<noscript>
 		<style>
@@ -1176,7 +1416,7 @@
 						<p>EARC 2027</p>
 					</div>
 					<div class="bee-block bee-block-2 bee-heading">
-						<h1><span class="tinyMce-placeholder"><strong>力, Power</strong> Reimagined</span> </h1>
+						<h1><span class="tinyMce-placeholder"><strong>力—— Power</strong> Reimagined</span> </h1>
 					</div>
 					<div class="bee-block bee-block-3 bee-spacer">
 						<div class="spacer" style="height:20px;"></div>
@@ -1309,280 +1549,66 @@
 				</div>
 			</div>
 		</div>
-		<div class="bee-row bee-row-9 bee-mobile_hide">
+		<div class="bee-row bee-row-9">
 			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w4 reveal reveal-d1">
+				<div class="bee-col bee-col-1 bee-col-w12 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-heading">
-						<h1><span class="tinyMce-placeholder">Streamlined <br />Schedule</span> </h1>
+						<h1><span class="tinyMce-placeholder">Schedule</span></h1>
 					</div>
-					<div class="bee-block bee-block-2 bee-button">
-						<div class="bee-button-content" id="scheduleSeeMoreDesktop" role="button" tabindex="0" aria-label="See more days" style="font-size: 17px; display: inline-block;"><span style="word-break: break-word; font-size: 17px; line-height: 120%; letter-spacing: normal;">→</span><span style="word-break: break-word; font-size: 17px; line-height: 120%; letter-spacing: normal;">SEE MORE</span></div>
-					</div>
-				</div>
-				<div class="bee-col bee-col-2 bee-col-w8 schedule-viewport reveal reveal-d2" id="scheduleViewportDesktop">
-					<div class="schedule-track" id="scheduleTrackDesktop">
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 1  (7/20 TUE.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>1200-1500  Registration/ Check-In</p>
-								<p>1500-1630  Movement Time</p>
-								<p>1630-1730  Free Time/ Small Group Leaders Gathering </p>
-								<p>1900-1920  Worship</p>
-								<p>1920-2020  Opening：Power in the Shadows of the Empires</p>
-								<p>2050-2130 Small Group Sharing</p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 2  (7/21 WED.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1300-1500 Free Time (Movement Stalls)</p>
-								<p>1500-1730 Taiwan Fair</p>
-								<p>1900-1920 Introducing and Praying for Movements</p>
-								<p>1920-1940 Worship</p>
-								<p>1940-2020 Plenary：The Power That Shapes What We Want</p>
-								<p>2050-2130 Small Group Sharing</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 3  (7/22 THU.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1300-1500 Free Time (Movement Stalls)</p>
-								<p>1500-1730 Workshop</p>
-								<p>1900-1920 Introducing and Praying for Movements</p>
-								<p>1920-1940 Worship</p>
-								<p>1940-2020 Plenary：The Power That Fights Over Who You Are</p>
-								<p>2050-2130 Movement Time</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 4  (7/23 FRI.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1200-2130 Outing</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 5  (7/24 SAT.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1300-1500 Free Time (Movement Stalls)</p>
-								<p>1500-1730 Power of Students</p>
-								<p>1900-1920 Introducing and Praying for Movements</p>
-								<p>1920-1940 Worship</p>
-								<p>1940-2020 Plenary：The Power That Hollows You Out From Within</p>
-								<p>2050-2130 Small Group Sharing</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3>DAY 6  (7/25 SUN.) </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1300-1500 Movement Time/ Free Time</p>
-								<p>1500-1730 Student Concert</p>
-								<p>1900-1920 Introducing and Praying for Movements</p>
-								<p>1920-1940 Worship</p>
-								<p>1940-2020 Closing Sending：(Empowered) Commis-sioned in a Fragile World</p>
-								<p>2050-2130 Small Group Sharing</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 7  (7/26 MON.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0830-0900 Check-Out</p>
-								<p>0900-0940 Breakfast</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="bee-row bee-row-10 bee-desktop_hide">
-			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w4 reveal reveal-d1">
-					<div class="bee-block bee-block-1 bee-heading">
-						<h1><span class="tinyMce-placeholder">Streamlined <br />Schedule</span> </h1>
-					</div>
-					<div class="bee-block bee-block-2 bee-button">
-						<div class="bee-button-content" id="scheduleSeeMoreMobile" role="button" tabindex="0" aria-label="See more days" style="font-size: 17px; display: inline-block;"><span style="word-break: break-word; font-size: 17px; line-height: 120%; letter-spacing: normal;">→</span><span style="word-break: break-word; font-size: 17px; line-height: 120%; letter-spacing: normal;">SEE MORE</span></div>
-					</div>
-				</div>
-				<div class="bee-col bee-col-2 bee-col-w8 schedule-viewport reveal reveal-d2" id="scheduleViewportMobile">
-					<div class="schedule-track" id="scheduleTrackMobile">
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 1  (7/20 TUE.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>1200-1500  Registration/ Check-In</p>
-								<p>1500-1630  Movement Time</p>
-								<p>1630-1730  Free Time/ Small Group Leaders Gathering </p>
-								<p>1900-1920  Worship</p>
-								<p>1920-2020  Opening：Power in the Shadows of the Empires</p>
-								<p>2050-2130 Small Group Sharing</p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 2  (7/21 WED.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1300-1500 Free Time (Movement Stalls)</p>
-								<p>1500-1730 Taiwan Fair</p>
-								<p>1900-1920 Introducing and Praying for Movements</p>
-								<p>1920-1940 Worship</p>
-								<p>1940-2020 Plenary：The Power That Shapes What We Want</p>
-								<p>2050-2130 Small Group Sharing</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 3  (7/22 THU.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1300-1500 Free Time (Movement Stalls)</p>
-								<p>1500-1730 Workshop</p>
-								<p>1900-1920 Introducing and Praying for Movements</p>
-								<p>1920-1940 Worship</p>
-								<p>1940-2020 Plenary：The Power That Fights Over Who You Are</p>
-								<p>2050-2130 Movement Time</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 4  (7/23 FRI.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1200-2130 Outing</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 5  (7/24 SAT.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1300-1500 Free Time (Movement Stalls)</p>
-								<p>1500-1730 Power of Students</p>
-								<p>1900-1920 Introducing and Praying for Movements</p>
-								<p>1920-1940 Worship</p>
-								<p>1940-2020 Plenary：The Power That Hollows You Out From Within</p>
-								<p>2050-2130 Small Group Sharing</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3>DAY 6  (7/25 SUN.) </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0940-1000 Introducing and Praying for Movements </p>
-								<p>1000-1020 Worship</p>
-								<p>1040-1120 Bible Exposition</p>
-								<p>1300-1500 Movement Time/ Free Time</p>
-								<p>1500-1730 Student Concert</p>
-								<p>1900-1920 Introducing and Praying for Movements</p>
-								<p>1920-1940 Worship</p>
-								<p>1940-2020 Closing Sending：(Empowered) Commis-sioned in a Fragile World</p>
-								<p>2050-2130 Small Group Sharing</p>
-								<p> </p>
-							</div>
-						</div>
-						<div class="schedule-day">
-							<div class="bee-block bee-block-1 bee-heading">
-								<h3><span class="tinyMce-placeholder">DAY 7  (7/26 MON.)</span> </h3>
-							</div>
-							<div class="bee-block bee-block-2 bee-divider">
-								<div class="left bee-separator" style="border-top:3px solid #c7f44a;width:10%;"></div>
-							</div>
-							<div class="bee-block bee-block-3 bee-paragraph">
-								<p>0830-0900 Check-Out</p>
-								<p>0900-0940 Breakfast</p>
-							</div>
-						</div>
+					<div class="bee-block bee-block-2 bee-paragraph schedule-table-wrap">
+						<table class="schedule-table">
+							<thead>
+								<tr>
+									<th>Day</th>
+									<th>Morning</th>
+									<th>Afternoon</th>
+									<th>Evening</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="schedule-day-cell"><span class="day-num">DAY 1</span><span class="schedule-date">7/20 Tue.</span></td>
+									<td data-label="Morning"><span class="schedule-empty">—</span></td>
+									<td data-label="Afternoon">Registration / Movement Time</td>
+									<td data-label="Evening"><span class="event-label">Opening</span><span class="event-title">Power in the Shadows of the Empires</span></td>
+								</tr>
+								<tr>
+									<td class="schedule-day-cell"><span class="day-num">DAY 2</span><span class="schedule-date">7/21 Wed.</span></td>
+									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Afternoon">Taiwan Fair</td>
+									<td data-label="Evening"><span class="event-label">Plenary</span><span class="event-title">The Power That Shapes What We Want</span></td>
+								</tr>
+								<tr>
+									<td class="schedule-day-cell"><span class="day-num">DAY 3</span><span class="schedule-date">7/22 Thu.</span></td>
+									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Afternoon">Workshop</td>
+									<td data-label="Evening"><span class="event-label">Plenary</span><span class="event-title">The Power That Fights Over Who You Are</span></td>
+								</tr>
+								<tr>
+									<td class="schedule-day-cell"><span class="day-num">DAY 4</span><span class="schedule-date">7/23 Fri.</span></td>
+									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Afternoon / Evening" colspan="2">Outing</td>
+								</tr>
+								<tr>
+									<td class="schedule-day-cell"><span class="day-num">DAY 5</span><span class="schedule-date">7/24 Sat.</span></td>
+									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Afternoon">Power of Students</td>
+									<td data-label="Evening"><span class="event-label">Plenary</span><span class="event-title">The Power That Hollows You Out From Within</span></td>
+								</tr>
+								<tr>
+									<td class="schedule-day-cell"><span class="day-num">DAY 6</span><span class="schedule-date">7/25 Sun.</span></td>
+									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Afternoon">Student Concert</td>
+									<td data-label="Evening"><span class="event-label">Closing Sending</span><span class="event-title">(Empowered) Commissioned in a Fragile World</span></td>
+								</tr>
+								<tr>
+									<td class="schedule-day-cell"><span class="day-num">DAY 7</span><span class="schedule-date">7/26 Mon.</span></td>
+									<td data-label="Morning">Check-Out / Breakfast</td>
+									<td data-label="Afternoon"><span class="schedule-empty">—</span></td>
+									<td data-label="Evening"><span class="schedule-empty">—</span></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -1646,56 +1672,6 @@
 			</div>
 		</div>
 	</div>
-
-<script>
-(function () {
-	function setupScheduleCarousel(viewportId, trackId, buttonId, visibleCount) {
-		var viewport = document.getElementById(viewportId);
-		var track = document.getElementById(trackId);
-		var button = document.getElementById(buttonId);
-		if (!viewport || !track || !button) { return; }
-
-		var days = Array.prototype.slice.call(track.children);
-		var total = days.length;
-		var maxIndex = Math.max(0, total - visibleCount);
-		var index = 0;
-
-		function layout() {
-			var dayWidth = viewport.clientWidth / visibleCount;
-			days.forEach(function (day) {
-				day.style.width = dayWidth + "px";
-			});
-			track.style.width = (dayWidth * total) + "px";
-			track.style.transform = "translateX(-" + (index * dayWidth) + "px)";
-		}
-
-		function advance() {
-			index = index + 1;
-			if (index > maxIndex) {
-				index = 0;
-			}
-			layout();
-		}
-
-		button.addEventListener("click", function (e) {
-			e.preventDefault();
-			advance();
-		});
-		button.addEventListener("keydown", function (e) {
-			if (e.key === "Enter" || e.key === " ") {
-				e.preventDefault();
-				advance();
-			}
-		});
-
-		window.addEventListener("resize", layout);
-		layout();
-	}
-
-	setupScheduleCarousel("scheduleViewportDesktop", "scheduleTrackDesktop", "scheduleSeeMoreDesktop", 2);
-	setupScheduleCarousel("scheduleViewportMobile", "scheduleTrackMobile", "scheduleSeeMoreMobile", 1);
-})();
-</script>
 <script>
 (function () {
 	"use strict";

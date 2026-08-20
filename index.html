@@ -254,8 +254,19 @@
 			text-align: center;
 			padding: 20px;
 		}
+		.bee-row-15 {
+			background-color: #0047af;
+			margin-top: 48px;
+		}
+
+		@media (max-width: 768px) {
+			.bee-row-15 {
+				margin-top: 32px;
+			}
+		}
+
 		.bee-row-15 .bee-col-1 .bee-block-0 h1 {
-			color: #000000;
+			color: #ffffff;
 			direction: ltr;
 			font-family: "Lato", Tahoma, Verdana, Segoe, sans-serif;
 			font-size: 38px;
@@ -293,6 +304,116 @@
 			line-height: 100%;
 			text-align: center
 		}
+
+		.em-dash-tight {
+			letter-spacing: -0.18em;
+			margin-right: 0.18em;
+		}
+		html {
+			scroll-behavior: smooth;
+		}
+
+		#what-is-earc, #schedule, #workshop, #outing, #contact {
+			scroll-margin-top: 88px;
+		}
+
+		.quick-nav {
+			position: sticky;
+			top: 0;
+			z-index: 30;
+			background: #0047af;
+			padding: 14px 20px;
+			box-shadow: 0 6px 16px rgba(9, 30, 66, 0.18);
+		}
+
+		.quick-nav-inner {
+			max-width: 1040px;
+			margin: 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+		}
+
+		.quick-nav-pill {
+			display: inline-block;
+			padding: 7px 16px;
+			border-radius: 20px;
+			color: #ffffff;
+			font-family: "Lato", Tahoma, Verdana, Segoe, sans-serif;
+			font-size: 14px;
+			font-weight: 800;
+			letter-spacing: 0.2px;
+			text-decoration: none;
+			text-align: center;
+			transition: background-color 0.2s ease, color 0.2s ease;
+		}
+
+		.quick-nav-pill:hover {
+			background-color: #c7f44a;
+			color: #0047af;
+		}
+
+		.quick-nav-sep {
+			color: rgba(255, 255, 255, 0.35);
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1;
+			user-select: none;
+		}
+
+		@media (max-width: 768px) {
+			#what-is-earc, #schedule, #workshop, #outing, #contact {
+				scroll-margin-top: 80px;
+			}
+
+			.quick-nav {
+				padding: 10px 6px;
+			}
+
+			.quick-nav-inner {
+				flex-wrap: nowrap;
+				gap: 2px;
+				overflow-x: auto;
+				justify-content: center;
+				-webkit-overflow-scrolling: touch;
+				scrollbar-width: none;
+			}
+
+			.quick-nav-inner::-webkit-scrollbar {
+				display: none;
+			}
+
+			.quick-nav-pill {
+				flex: 0 0 auto;
+				padding: 6px 9px;
+				font-size: 11px;
+				letter-spacing: 0.1px;
+			}
+
+			.quick-nav-sep {
+				display: none;
+			}
+		}
+
+		@media (max-width: 340px) {
+			.quick-nav {
+				padding: 9px 4px;
+			}
+
+			.quick-nav-inner {
+				gap: 0;
+				justify-content: center;
+			}
+
+			.quick-nav-pill {
+				padding: 5px 6px;
+				font-size: 10px;
+				letter-spacing: 0;
+			}
+		}
+
 
 		@media (min-width: 769px) {
 			.bee-row-5 .bee-col-2 .bee-block-2 h1 {
@@ -355,6 +476,12 @@
 			display: none
 		}
 
+		@media (min-width: 769px) {
+			.bee-row-2 {
+				display: none;
+			}
+		}
+
 		.bee-button a {
 			text-decoration: none
 		}
@@ -409,6 +536,12 @@
 		.bee-row-15 .bee-col-1 {
 			padding-bottom: 5px;
 			padding-top: 5px
+		}
+
+		.bee-row-1 .bee-col-1,
+		.bee-row-2 .bee-col-1 {
+			padding-top: 0;
+			padding-bottom: 0;
 		}
 
 		.bee-row-2,
@@ -604,6 +737,38 @@
 			line-height: 150%;
 			text-align: left
 		}
+		.workshop-tracks {
+			margin: 0 0 16px;
+			padding: 0;
+			list-style: none;
+		}
+
+		.workshop-tracks li {
+			position: relative;
+			padding-left: 22px;
+			color: #000000;
+			font-family: "Lato", Tahoma, Verdana, Segoe, sans-serif;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 150%;
+			text-align: left;
+		}
+
+		.workshop-tracks li:not(:last-child) {
+			margin-bottom: 8px;
+		}
+
+		.workshop-tracks li::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 9px;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: #0047af;
+		}
+
 
 		.bee-row-14 .bee-col-2 .bee-block-3,
 		.bee-row-14 .bee-col-3 .bee-block-3 {
@@ -1167,12 +1332,17 @@
 				border-left: 1px solid rgba(255, 255, 255, 0.14);
 			}
 
+			.schedule-table tbody tr {
+				transition: background-color 0.2s ease, box-shadow 0.2s ease;
+			}
+
 			.schedule-table tbody tr:nth-child(even) {
 				background: rgba(255, 255, 255, 0.04);
 			}
 
 			.schedule-table tbody tr:hover {
-				background: rgba(199, 244, 74, 0.08);
+				background: rgba(199, 244, 74, 0.22);
+				box-shadow: inset 4px 0 0 #c7f44a;
 			}
 		}
 
@@ -1219,6 +1389,13 @@
 			font-weight: 800;
 			color: #ffffff;
 			line-height: 1.35;
+		}
+		.event-speaker {
+			display: block;
+			font-size: 14px;
+			font-weight: 700;
+			color: rgba(255, 255, 255, 0.75);
+			margin-top: 6px;
 		}
 
 		.schedule-empty {
@@ -1308,10 +1485,11 @@
 			}
 
 			.schedule-day-cell .schedule-date {
-				display: inline;
-				margin-top: 0;
-				margin-left: 10px;
+				display: block;
+				margin-top: 8px;
+				margin-left: 0;
 				font-size: 15px;
+				text-align: center;
 			}
 
 			.event-label {
@@ -1363,7 +1541,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="bee-row bee-row-3">
+		<nav class="quick-nav" aria-label="Quick navigation">
+			<div class="quick-nav-inner">
+				<a class="quick-nav-pill" href="#what-is-earc">About EARC</a>
+				<span class="quick-nav-sep">｜</span>
+				<a class="quick-nav-pill" href="#schedule">Schedule</a>
+				<span class="quick-nav-sep">｜</span>
+				<a class="quick-nav-pill" href="#workshop">Workshop</a>
+				<span class="quick-nav-sep">｜</span>
+				<a class="quick-nav-pill" href="#outing">Outing</a>
+				<span class="quick-nav-sep">｜</span>
+				<a class="quick-nav-pill" href="#contact">Contact</a>
+			</div>
+		</nav>
+		<div class="bee-row bee-row-3" id="what-is-earc">
 			<div class="bee-row-content">
 				<div class="bee-col bee-col-1 bee-col-w2">
 					<div class="bee-block bee-block-1 bee-spacer bee-mobile_hide">
@@ -1416,7 +1607,7 @@
 						<p>EARC 2027</p>
 					</div>
 					<div class="bee-block bee-block-2 bee-heading">
-						<h1><span class="tinyMce-placeholder"><strong>力—— Power</strong> Reimagined</span> </h1>
+						<h1><span class="tinyMce-placeholder"><strong>力<span class="em-dash-tight">——</span> Power</strong> Reimagined</span> </h1>
 					</div>
 					<div class="bee-block bee-block-3 bee-spacer">
 						<div class="spacer" style="height:20px;"></div>
@@ -1461,95 +1652,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="bee-row bee-row-7">
-			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w12 reveal reveal-d1">
-					<div class="bee-block bee-block-1 bee-heading">
-						<h1><span class="tinyMce-placeholder">Speakers</span> </h1>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="bee-row bee-row-8">
-			<div class="bee-row-content">
-				<div class="bee-col bee-col-1 bee-col-w3 reveal reveal-d1">
-					<div class="bee-block bee-block-1 bee-paragraph">
-						<p>Bible Exposition</p>
-					</div>
-					<div class="bee-block bee-block-2 bee-heading">
-						<h3><span class="tinyMce-placeholder">Rev. Duane Chang</span> </h3>
-					</div>
-					<div class="bee-block bee-block-3 bee-paragraph">
-						<p>Pastor of Chinese Bible Church of Greater Boston</p>
-						<p>former Taiwan CEF Staff</p>
-					</div>
-				</div>
-				<div class="bee-col bee-col-2 bee-col-w3 reveal reveal-d2">
-					<div class="bee-block bee-block-1 bee-paragraph">
-						<p>Plenary 1</p>
-					</div>
-					<div class="bee-block bee-block-2 bee-heading">
-						<h3><span class="tinyMce-placeholder">Speaker</span> </h3>
-					</div>
-					<div class="bee-block bee-block-3 bee-paragraph">
-						<p>Thailand</p>
-					</div>
-					<div class="bee-block bee-block-4 bee-spacer">
-						<div class="spacer" style="height:30px;"></div>
-					</div>
-					<div class="bee-block bee-block-5 bee-heading">
-						<h3><span class="tinyMce-placeholder">Michelle</span> </h3>
-					</div>
-					<div class="bee-block bee-block-6 bee-paragraph">
-						<p>Thailand</p>
-					</div>
-				</div>
-				<div class="bee-col bee-col-3 bee-col-w3 reveal reveal-d3">
-					<div class="bee-block bee-block-1 bee-paragraph">
-						<p>Plenary 2</p>
-					</div>
-					<div class="bee-block bee-block-2 bee-heading">
-						<h3><span class="tinyMce-placeholder">Rei Lemuel</span> </h3>
-					</div>
-					<div class="bee-block bee-block-3 bee-paragraph">
-						<p>Philippines</p>
-					</div>
-					<div class="bee-block bee-block-4 bee-spacer">
-						<div class="spacer" style="height:30px;"></div>
-					</div>
-					<div class="bee-block bee-block-5 bee-heading">
-						<h3><span class="tinyMce-placeholder">Speaker</span> </h3>
-					</div>
-					<div class="bee-block bee-block-6 bee-paragraph">
-						<p>Philippines</p>
-					</div>
-					<div class="bee-block bee-block-7 bee-spacer">
-						<div class="spacer" style="height:60px;"></div>
-					</div>
-				</div>
-				<div class="bee-col bee-col-4 bee-col-w3 reveal reveal-d4">
-					<div class="bee-block bee-block-1 bee-paragraph">
-						<p>Plenary 3</p>
-					</div>
-					<div class="bee-block bee-block-2 bee-heading">
-						<h3><span class="tinyMce-placeholder">Esther Dang</span> </h3>
-					</div>
-					<div class="bee-block bee-block-3 bee-paragraph">
-						<p>Mov B</p>
-					</div>
-					<div class="bee-block bee-block-4 bee-spacer">
-						<div class="spacer" style="height:30px;"></div>
-					</div>
-					<div class="bee-block bee-block-5 bee-heading">
-						<h3><span class="tinyMce-placeholder">Yoko Sugaya</span> </h3>
-					</div>
-					<div class="bee-block bee-block-6 bee-paragraph">
-						<p>Japan</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="bee-row bee-row-9">
+		<div class="bee-row bee-row-9" id="schedule">
 			<div class="bee-row-content">
 				<div class="bee-col bee-col-1 bee-col-w12 reveal reveal-d1">
 					<div class="bee-block bee-block-1 bee-heading">
@@ -1574,36 +1677,36 @@
 								</tr>
 								<tr>
 									<td class="schedule-day-cell"><span class="day-num">DAY 2</span><span class="schedule-date">7/21 Wed.</span></td>
-									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Morning"><span class="event-title">Bible Exposition</span><span class="event-speaker">Rev. Duane Chang</span></td>
 									<td data-label="Afternoon">Taiwan Fair</td>
 									<td data-label="Evening"><span class="event-label">Plenary</span><span class="event-title">The Power That Shapes What We Want</span></td>
 								</tr>
 								<tr>
 									<td class="schedule-day-cell"><span class="day-num">DAY 3</span><span class="schedule-date">7/22 Thu.</span></td>
-									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Morning"><span class="event-title">Bible Exposition</span><span class="event-speaker">Rev. Duane Chang</span></td>
 									<td data-label="Afternoon">Workshop</td>
 									<td data-label="Evening"><span class="event-label">Plenary</span><span class="event-title">The Power That Fights Over Who You Are</span></td>
 								</tr>
 								<tr>
 									<td class="schedule-day-cell"><span class="day-num">DAY 4</span><span class="schedule-date">7/23 Fri.</span></td>
-									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Morning"><span class="event-title">Bible Exposition</span><span class="event-speaker">Rev. Duane Chang</span></td>
 									<td data-label="Afternoon / Evening" colspan="2">Outing</td>
 								</tr>
 								<tr>
 									<td class="schedule-day-cell"><span class="day-num">DAY 5</span><span class="schedule-date">7/24 Sat.</span></td>
-									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Morning"><span class="event-title">Bible Exposition</span><span class="event-speaker">Rev. Duane Chang</span></td>
 									<td data-label="Afternoon">Power of Students</td>
 									<td data-label="Evening"><span class="event-label">Plenary</span><span class="event-title">The Power That Hollows You Out From Within</span></td>
 								</tr>
 								<tr>
 									<td class="schedule-day-cell"><span class="day-num">DAY 6</span><span class="schedule-date">7/25 Sun.</span></td>
-									<td data-label="Morning">Bible Exposition</td>
+									<td data-label="Morning"><span class="event-title">Bible Exposition</span><span class="event-speaker">Rev. Duane Chang</span></td>
 									<td data-label="Afternoon">Student Concert</td>
 									<td data-label="Evening"><span class="event-label">Closing Sending</span><span class="event-title">(Empowered) Commissioned in a Fragile World</span></td>
 								</tr>
 								<tr>
 									<td class="schedule-day-cell"><span class="day-num">DAY 7</span><span class="schedule-date">7/26 Mon.</span></td>
-									<td data-label="Morning">Check-Out / Breakfast</td>
+									<td data-label="Morning">Check-Out</td>
 									<td data-label="Afternoon"><span class="schedule-empty">—</span></td>
 									<td data-label="Evening"><span class="schedule-empty">—</span></td>
 								</tr>
@@ -1629,17 +1732,23 @@
 						<div class="spacer" style="height:60px;"></div>
 					</div>
 				</div>
-				<div class="bee-col bee-col-2 bee-col-w5 reveal reveal-d1">
+				<div class="bee-col bee-col-2 bee-col-w5 reveal reveal-d1" id="workshop">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h1><span class="tinyMce-placeholder">Workshop</span> </h1>
 					</div>
 					<div class="bee-block bee-block-2 bee-paragraph">
-						<p dir="ltr">EARC 2027's workshops invite you to wrestle honestly with life's hardest questions, and rediscover what "power" truly means, across four tracks: <strong>Critical Thinking (Biblical &amp; Theological Foundations), Growth (Calling &amp; Adulthood), Spiritual &amp; Emotional Care, and Engaging Society &amp; Culture.</strong></p>
+						<p dir="ltr">EARC 2027's workshops invite you to wrestle honestly with life's hardest questions, and rediscover what "power" truly means, across four tracks:</p>
+						<ul class="workshop-tracks" dir="ltr">
+							<li><strong>Critical Thinking</strong> (Biblical &amp; Theological Foundations)</li>
+							<li><strong>Growth</strong> (Calling &amp; Adulthood)</li>
+							<li><strong>Spiritual &amp; Emotional Care</strong></li>
+							<li><strong>Engaging Society &amp; Culture</strong></li>
+						</ul>
 						<p dir="ltr">23 sessions, led by partner movements from across East Asia — come reimagine power with us.</p>
 					</div>
 					<div class="bee-block bee-block-3 bee-button"><a class="bee-button-content" href="/" style="font-size: 16px; display: inline-block;" target="_blank"><span style="word-break: break-word; font-size: 16px; line-height: 200%; letter-spacing: normal;">View Full Schedule</span></a></div>
 				</div>
-				<div class="bee-col bee-col-3 bee-col-w5 reveal reveal-d2">
+				<div class="bee-col bee-col-3 bee-col-w5 reveal reveal-d2" id="outing">
 					<div class="bee-block bee-block-1 bee-heading">
 						<h1><span class="tinyMce-placeholder">Outing</span> </h1>
 					</div>
@@ -1656,7 +1765,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="bee-row bee-row-15">
+		<div class="bee-row bee-row-15" id="contact">
 			<div class="bee-row-content">
 				<div class="bee-col bee-col-1 bee-col-w12">
 					<div class="bee-block bee-block-0 bee-heading reveal reveal-d1">

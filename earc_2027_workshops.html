@@ -25,9 +25,17 @@
 		}
 
 		.page-wrap {
-			max-width: 1185px;
+			max-width: 980px;
 			margin: 0 auto;
 			padding: 0 24px;
+		}
+
+		.site-header .page-wrap {
+			max-width: 1185px;
+		}
+
+		.page-wrap-nav {
+			max-width: 1230px;
 		}
 
 		/* ---------- Header ---------- */
@@ -118,6 +126,140 @@
 			font-size: 18px;
 			font-weight: 600;
 			line-height: 1.6;
+		}
+
+		/* ---------- Hero photo collage ---------- */
+		.hero-photos {
+			position: relative;
+			width: 310px;
+			height: 226px;
+			margin: 32px auto 0;
+			z-index: 2;
+		}
+
+		.hero-photo {
+			position: absolute;
+			background: #ffffff;
+			padding: 8px 8px 28px;
+			border-radius: 6px;
+			box-shadow: 0 12px 26px rgba(9, 30, 66, 0.35);
+			transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+			cursor: default;
+		}
+
+		.hero-photo img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 2px;
+		}
+
+		.hero-photo-2 {
+			top: 0;
+			left: 0;
+			width: 204px;
+			height: 153px;
+			transform: rotate(6deg);
+			z-index: 1;
+		}
+
+		.hero-photo-2:hover {
+			transform: rotate(2deg) scale(1.08) translateY(-6px);
+			box-shadow: 0 20px 34px rgba(9, 30, 66, 0.4);
+			z-index: 4;
+		}
+
+		.hero-photo-1 {
+			bottom: 0;
+			right: 0;
+			width: 148px;
+			height: 185px;
+			transform: rotate(-7deg);
+			z-index: 2;
+		}
+
+		.hero-photo-1:hover {
+			transform: rotate(-2deg) scale(1.08) translateY(-6px);
+			box-shadow: 0 20px 34px rgba(9, 30, 66, 0.4);
+			z-index: 4;
+		}
+
+		.hero-deco {
+			position: absolute;
+			z-index: 3;
+		}
+
+		.hero-deco-star {
+			top: -14px;
+			left: 72px;
+			width: 28px;
+			height: 28px;
+			animation: hero-spin 9s linear infinite;
+		}
+
+		.hero-deco-star svg {
+			width: 100%;
+			height: 100%;
+		}
+
+		.hero-deco-dot {
+			bottom: 20px;
+			left: -14px;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: #ea3471;
+		}
+
+		@keyframes hero-spin {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.hero-deco-star {
+				animation: none;
+			}
+		}
+
+		@media (min-width: 1150px) {
+			.hero-photos {
+				position: absolute;
+				top: 46px;
+				right: max(24px, calc((100% - 1185px) / 2 + 40px));
+				width: 380px;
+				height: 264px;
+				margin: 0;
+			}
+
+			.hero-photo {
+				padding: 10px 10px 34px;
+			}
+
+			.hero-photo-2 {
+				width: 260px;
+				height: 195px;
+			}
+
+			.hero-photo-1 {
+				width: 190px;
+				height: 238px;
+			}
+
+			.hero-deco-star {
+				top: -18px;
+				left: 88px;
+				width: 34px;
+				height: 34px;
+			}
+
+			.hero-deco-dot {
+				bottom: 30px;
+				left: -18px;
+				width: 18px;
+				height: 18px;
+			}
 		}
 
 		/* ---------- Intro ---------- */
@@ -267,7 +409,7 @@
 
 		.workshop-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+			grid-template-columns: repeat(2, 1fr);
 			gap: 24px;
 		}
 
@@ -484,6 +626,14 @@
 			<div class="site-header-title">
 				<span class="eyebrow">EARC 2027</span>
 				<h1>Workshops</h1>
+				<div class="hero-photos" aria-hidden="true">
+					<span class="hero-deco hero-deco-star">
+						<svg viewBox="0 0 24 24"><path d="M12 0l2.9 8.9H24l-7.5 5.5L19.4 24 12 18.3 4.6 24l2.9-9.6L0 8.9h9.1z" fill="#c7f44a"/></svg>
+					</span>
+					<span class="hero-deco hero-deco-dot"></span>
+					<div class="hero-photo hero-photo-2"><img src="./assets/workshops/hero/hero-photo-2.jpg" alt="A student leading a talk at a past EARC workshop session" loading="lazy" /></div>
+					<div class="hero-photo hero-photo-1"><img src="./assets/workshops/hero/hero-photo-1.jpg" alt="Students in small-group discussion at a past EARC workshop" loading="lazy" /></div>
+				</div>
 				<div class="header-info-card">
 					<p>Workshops take place on Thursday, July 22 (Day 3), 15:00&ndash;17:30. Please indicate your preferred workshop in the registration form.</p>
 				</div>
@@ -492,7 +642,7 @@
 	</header>
 
 	<main>
-		<div class="page-wrap">
+		<div class="page-wrap page-wrap-nav">
 			<nav class="track-nav" aria-label="Jump to track">
 				<div class="track-nav-inner">
 <a class="track-pill" href="#track-A" style="--pill-accent:#0047af;--pill-text:#ffffff;"><span class="track-pill-code">A</span>Critical Thinking (Biblical and Theological Foundations)</a>
@@ -500,6 +650,9 @@
 				<a class="track-pill" href="#track-C" style="--pill-accent:#c7f44a;--pill-text:#0b2a52;"><span class="track-pill-code">C</span>Spiritual and Emotional Care</a>
 				<a class="track-pill" href="#track-D" style="--pill-accent:#7747FF;--pill-text:#ffffff;"><span class="track-pill-code">D</span>Engaging Society and Culture</a>				</div>
 			</nav>
+		</div>
+
+		<div class="page-wrap">
 
 		<section class="track-section" id="track-A">
 			<div class="track-header reveal">
@@ -704,8 +857,8 @@
 		<div class="page-wrap">
 			<h2 class="reveal">Contact Us</h2>
 			<div class="footer-social reveal reveal-d2">
-				<span class="icon"><a href="https://www.facebook.com/profile.php?id=61592580462582" target="_self"><img alt="Facebook" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/facebook@2x.png" title="facebook" /></a></span>
-				<span class="icon"><a href="https://www.instagram.com/earc2027" target="_self"><img alt="Instagram" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" title="instagram" /></a></span>
+				<span class="icon"><a href="https://www.facebook.com/profile.php?id=61592580462582" target="_self"><img alt="Facebook" src="./assets/home/facebook.png" title="facebook" /></a></span>
+				<span class="icon"><a href="https://www.instagram.com/earc2027" target="_self"><img alt="Instagram" src="./assets/home/instagram.png" title="instagram" /></a></span>
 			</div>
 		</div>
 	</footer>

@@ -25,9 +25,13 @@
 		}
 
 		.page-wrap {
-			max-width: 1185px;
+			max-width: 980px;
 			margin: 0 auto;
 			padding: 0 24px;
+		}
+
+		.site-header .page-wrap {
+			max-width: 1185px;
 		}
 
 		/* ---------- Header ---------- */
@@ -118,6 +122,140 @@
 			font-size: 18px;
 			font-weight: 600;
 			line-height: 1.6;
+		}
+
+		/* ---------- Hero photo collage ---------- */
+		.hero-photos {
+			position: relative;
+			width: 310px;
+			height: 226px;
+			margin: 32px auto 0;
+			z-index: 2;
+		}
+
+		.hero-photo {
+			position: absolute;
+			background: #ffffff;
+			padding: 8px 8px 28px;
+			border-radius: 6px;
+			box-shadow: 0 12px 26px rgba(9, 30, 66, 0.35);
+			transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+			cursor: default;
+		}
+
+		.hero-photo img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 2px;
+		}
+
+		.hero-photo-2 {
+			top: 0;
+			left: 0;
+			width: 204px;
+			height: 153px;
+			transform: rotate(6deg);
+			z-index: 1;
+		}
+
+		.hero-photo-2:hover {
+			transform: rotate(2deg) scale(1.08) translateY(-6px);
+			box-shadow: 0 20px 34px rgba(9, 30, 66, 0.4);
+			z-index: 4;
+		}
+
+		.hero-photo-1 {
+			bottom: 0;
+			right: 0;
+			width: 148px;
+			height: 185px;
+			transform: rotate(-7deg);
+			z-index: 2;
+		}
+
+		.hero-photo-1:hover {
+			transform: rotate(-2deg) scale(1.08) translateY(-6px);
+			box-shadow: 0 20px 34px rgba(9, 30, 66, 0.4);
+			z-index: 4;
+		}
+
+		.hero-deco {
+			position: absolute;
+			z-index: 3;
+		}
+
+		.hero-deco-star {
+			top: -14px;
+			left: 72px;
+			width: 28px;
+			height: 28px;
+			animation: hero-spin 9s linear infinite;
+		}
+
+		.hero-deco-star svg {
+			width: 100%;
+			height: 100%;
+		}
+
+		.hero-deco-dot {
+			bottom: 20px;
+			left: -14px;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: #ea3471;
+		}
+
+		@keyframes hero-spin {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.hero-deco-star {
+				animation: none;
+			}
+		}
+
+		@media (min-width: 1150px) {
+			.hero-photos {
+				position: absolute;
+				top: 46px;
+				right: max(24px, calc((100% - 1185px) / 2 + 40px));
+				width: 380px;
+				height: 264px;
+				margin: 0;
+			}
+
+			.hero-photo {
+				padding: 10px 10px 34px;
+			}
+
+			.hero-photo-2 {
+				width: 260px;
+				height: 195px;
+			}
+
+			.hero-photo-1 {
+				width: 190px;
+				height: 238px;
+			}
+
+			.hero-deco-star {
+				top: -18px;
+				left: 88px;
+				width: 34px;
+				height: 34px;
+			}
+
+			.hero-deco-dot {
+				bottom: 30px;
+				left: -18px;
+				width: 18px;
+				height: 18px;
+			}
 		}
 
 		/* ---------- Route quick nav ---------- */
@@ -221,7 +359,7 @@
 
 		.outing-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-template-columns: repeat(2, 1fr);
 			gap: 24px;
 		}
 
@@ -295,12 +433,9 @@
 		.outing-route {
 			margin: 0;
 			font-size: 13.5px;
+			font-weight: 600;
 			line-height: 1.6;
 			color: #6b6f76;
-		}
-
-		.outing-route strong {
-			color: #101112;
 		}
 
 		.outing-note {
@@ -462,8 +597,16 @@
 			<div class="site-header-title">
 				<span class="eyebrow">EARC 2027</span>
 				<h1>Outing</h1>
+				<div class="hero-photos" aria-hidden="true">
+					<span class="hero-deco hero-deco-star">
+						<svg viewBox="0 0 24 24"><path d="M12 0l2.9 8.9H24l-7.5 5.5L19.4 24 12 18.3 4.6 24l2.9-9.6L0 8.9h9.1z" fill="#c7f44a"/></svg>
+					</span>
+					<span class="hero-deco hero-deco-dot"></span>
+					<div class="hero-photo hero-photo-2"><img src="./assets/outing/hero/hero-photo-2.jpg" alt="Students on a past EARC outing, group photo in front of a shopping plaza" loading="lazy" /></div>
+					<div class="hero-photo hero-photo-1"><img src="./assets/outing/hero/hero-photo-1.jpg" alt="Three students making heart hand-signs on a past EARC outing" loading="lazy" /></div>
+				</div>
 				<div class="header-info-card">
-					<p>Outing takes place on Friday, July 23, 12:00&ndash;21:30. Pick one Culture &amp; History or City &amp; Scenery route below.</p>
+					<p>Outing takes place on Friday, July 23 (Day 4), 12:00&ndash;21:30. Pick one Culture &amp; History or City &amp; Scenery route below.</p>
 				</div>
 			</div>
 		</div>
@@ -496,7 +639,7 @@
 							<span class="outing-code" style="background:#0047af;color:#ffffff;">CH1</span>
 							<h3 class="outing-title">Dadaocheng: Taipei's Old Tea Town</h3>
 							<p class="outing-desc">Dadaocheng was once the beating heart of Taiwan's global tea trade and the birthplace of the 1920s movement for democracy and cultural enlightenment. Its beautifully preserved shophouses, century-old temple, and riverside sunset make it one of Taipei's most atmospheric old quarters.</p>
-							<p class="outing-route"><strong>Route:</strong> Dadaoqiantou Station &rarr; Taiwan New Cultural Movement Memorial Hall &rarr; Dihua Street &rarr; Xiahai City God Temple &rarr; Dadaocheng Wharf (sunset) &rarr; Pier-5 Container Market (dinner)</p>
+							<p class="outing-route" style="color:#0047af;"><strong>Route:</strong> Dadaoqiantou Station &rarr; Taiwan New Cultural Movement Memorial Hall &rarr; Dihua Street &rarr; Xiahai City God Temple &rarr; Dadaocheng Wharf (sunset) &rarr; Pier-5 Container Market (dinner)</p>
 							<p class="outing-note">Note: this route includes a stop at a non-Christian religious site.</p>
 						</div>
 					</article>
@@ -508,7 +651,7 @@
 							<span class="outing-code" style="background:#0047af;color:#ffffff;">CH2</span>
 							<h3 class="outing-title">Tamsui: The Mackay Trail</h3>
 							<p class="outing-desc">Tamsui is where Canadian missionary Dr. George Mackay landed in 1872 and launched northern Taiwan's medical and educational missions. Its red-brick colonial architecture and golden riverside sunset still carry that legacy today.</p>
-							<p class="outing-route"><strong>Route:</strong> Tamsui Station &rarr; Tamsui Presbyterian Church &rarr; Hobe Mackay Hospital &rarr; Dr. Mackay Statue Park &rarr; Tamsui Golden Riverside (sunset) &rarr; Tamsui Old Street (dinner)</p>
+							<p class="outing-route" style="color:#0047af;"><strong>Route:</strong> Tamsui Station &rarr; Tamsui Presbyterian Church &rarr; Hobe Mackay Hospital &rarr; Dr. Mackay Statue Park &rarr; Tamsui Golden Riverside (sunset) &rarr; Tamsui Old Street (dinner)</p>
 						</div>
 					</article>
 					<article class="outing-card reveal reveal-d3">
@@ -519,7 +662,7 @@
 							<span class="outing-code" style="background:#0047af;color:#ffffff;">CH3</span>
 							<h3 class="outing-title">The National Palace Museum</h3>
 							<p class="outing-desc">Home to nearly 700,000 pieces of Chinese art and antiquities &mdash; including treasures preserved through decades of upheaval &mdash; the National Palace Museum holds one of the world's great collections. Afterward, unwind at Yuanshan Expo Park, the green riverside park built for Taipei's international flower exposition.</p>
-							<p class="outing-route"><strong>Route:</strong> National Palace Museum &rarr; Yuanshan Expo Park (dinner)</p>
+							<p class="outing-route" style="color:#0047af;"><strong>Route:</strong> National Palace Museum &rarr; Yuanshan Expo Park (dinner)</p>
 						</div>
 					</article>
 					<article class="outing-card reveal reveal-d4">
@@ -530,7 +673,7 @@
 							<span class="outing-code" style="background:#0047af;color:#ffffff;">CH4</span>
 							<h3 class="outing-title">Taiwan's Road to Democracy</h3>
 							<p class="outing-desc">Once a martial-law-era detention center and military court, Jing-Mei is now preserved as a national human rights museum &mdash; a sobering, important stop for understanding Taiwan's decades-long journey to democracy. Hike up Xianji Rock afterward for one of the best sunset views over the city.</p>
-							<p class="outing-route"><strong>Route:</strong> National Human Rights Museum &mdash; Jing-Mei White Terror Memorial Park &rarr; Xianji Rock (city view) &rarr; Jingmei Night Market (dinner)</p>
+							<p class="outing-route" style="color:#0047af;"><strong>Route:</strong> National Human Rights Museum &mdash; Jing-Mei White Terror Memorial Park &rarr; Xianji Rock (city view) &rarr; Jingmei Night Market (dinner)</p>
 						</div>
 					</article>
 				</div>
@@ -554,7 +697,7 @@
 							<span class="outing-code" style="background:#ea3471;color:#ffffff;">CS1</span>
 							<h3 class="outing-title">Yangmingshan: Grasslands &amp; Trails</h3>
 							<p class="outing-desc">One of Taiwan's few national parks reachable within the city, Yangmingshan's volcanic peaks and rolling grasslands &mdash; look out for grazing water buffalo &mdash; offer some of the best hiking and scenery near Taipei.</p>
-							<p class="outing-route"><strong>Route:</strong> Lengshuikeng Trail &rarr; Qingtiangang Grassland &rarr; Xiaoyoukeng &rarr; afternoon tea near Caoshan Villa &rarr; Shilin Night Market</p>
+							<p class="outing-route" style="color:#ea3471;"><strong>Route:</strong> Lengshuikeng Trail &rarr; Qingtiangang Grassland &rarr; Xiaoyoukeng &rarr; afternoon tea near Caoshan Villa &rarr; Shilin Night Market</p>
 						</div>
 					</article>
 					<article class="outing-card reveal reveal-d2">
@@ -565,7 +708,7 @@
 							<span class="outing-code" style="background:#ea3471;color:#ffffff;">CS2</span>
 							<h3 class="outing-title">Keelung: Taiwan's First Port</h3>
 							<p class="outing-desc">As Taiwan's gateway to Northeast Asia, Keelung was home to the island's first railway and first modern port city. It's also where Dr. Mackay planted his very first church and famously preached &mdash; and pulled teeth &mdash; outside the temple gates.</p>
-							<p class="outing-route"><strong>Route:</strong> Keelung Presbyterian Church &rarr; Qing'an Temple &rarr; Yang Ming Maritime Culture &amp; Art Museum &rarr; Ocean Plaza &rarr; Miaokou Night Market (dinner)</p>
+							<p class="outing-route" style="color:#ea3471;"><strong>Route:</strong> Keelung Presbyterian Church &rarr; Qing'an Temple &rarr; Yang Ming Maritime Culture &amp; Art Museum &rarr; Ocean Plaza &rarr; Miaokou Night Market (dinner)</p>
 							<p class="outing-note">Note: this route includes a stop at a non-Christian religious site.</p>
 						</div>
 					</article>
@@ -577,7 +720,7 @@
 							<span class="outing-code" style="background:#ea3471;color:#ffffff;">CS3</span>
 							<h3 class="outing-title">Taipei 101 &amp; Elephant Mountain</h3>
 							<p class="outing-desc">Once the tallest building in the world, Taipei 101 anchors the city's skyline &mdash; and the classic photo spot for it is the short hike up Elephant Mountain, a local favorite for sunset and night views.</p>
-							<p class="outing-route"><strong>Route:</strong> Taipei 101 &rarr; Elephant Mountain (rain plan: Songshan Cultural Park &amp; Sun Yat-sen Memorial Hall) &rarr; Linjiang Street Night Market</p>
+							<p class="outing-route" style="color:#ea3471;"><strong>Route:</strong> Taipei 101 &rarr; Elephant Mountain (rain plan: Songshan Cultural Park &amp; Sun Yat-sen Memorial Hall) &rarr; Linjiang Street Night Market</p>
 						</div>
 					</article>
 					<article class="outing-card reveal reveal-d4">
@@ -588,7 +731,7 @@
 							<span class="outing-code" style="background:#ea3471;color:#ffffff;">CS4</span>
 							<h3 class="outing-title">Yongkang Street &amp; Ximending</h3>
 							<p class="outing-desc">From the leafy, literary lanes around Yongkang Street to Ximending &mdash; Taipei's youth culture hub since the Japanese colonial era &mdash; this route traces the city's creative, everyday side.</p>
-							<p class="outing-route"><strong>Route:</strong> Yongkang Street &rarr; Da'an Forest Park &rarr; Liberty Square &rarr; Ximending</p>
+							<p class="outing-route" style="color:#ea3471;"><strong>Route:</strong> Yongkang Street &rarr; Da'an Forest Park &rarr; Liberty Square &rarr; Ximending</p>
 						</div>
 					</article>
 				</div>
@@ -601,8 +744,8 @@
 		<div class="page-wrap">
 			<h2 class="reveal">Contact Us</h2>
 			<div class="footer-social reveal reveal-d2">
-				<span class="icon"><a href="https://www.facebook.com/profile.php?id=61592580462582" target="_self"><img alt="Facebook" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/facebook@2x.png" title="facebook" /></a></span>
-				<span class="icon"><a href="https://www.instagram.com/earc2027" target="_self"><img alt="Instagram" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" title="instagram" /></a></span>
+				<span class="icon"><a href="https://www.facebook.com/profile.php?id=61592580462582" target="_self"><img alt="Facebook" src="./assets/home/facebook.png" title="facebook" /></a></span>
+				<span class="icon"><a href="https://www.instagram.com/earc2027" target="_self"><img alt="Instagram" src="./assets/home/instagram.png" title="instagram" /></a></span>
 			</div>
 		</div>
 	</footer>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<title>Workshops | EARC 2027</title>
+	<meta content="Workshops | EARC 2027 - Power Reimagined" property="og:title" />
+	<meta content="23 workshop sessions across four tracks, led by partner movements from across East Asia." name="description" />
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900" rel="stylesheet" type="text/css" />
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			background-color: #ffffff;
+			color: #101112;
+			font-family: "Lato", Tahoma, Verdana, Segoe, sans-serif;
+		}
+
+		a {
+			color: inherit;
+		}
+
+		.page-wrap {
+			max-width: 1185px;
+			margin: 0 auto;
+			padding: 0 24px;
+		}
+
+		/* ---------- Header ---------- */
+		.site-header {
+			position: relative;
+			z-index: 25;
+			background-color: #0047af;
+			background-image:
+				radial-gradient(circle at 12% 20%, rgba(199, 244, 74, 0.14) 0, transparent 40%),
+				radial-gradient(circle at 88% 78%, rgba(234, 52, 113, 0.16) 0, transparent 45%);
+			padding: 28px 0 56px;
+		}
+
+		.site-header-top {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 16px;
+			flex-wrap: wrap;
+		}
+
+		.site-brand {
+			color: #c7f44a;
+			font-weight: 900;
+			font-size: 20px;
+			letter-spacing: 0.3px;
+			text-decoration: none;
+		}
+
+		.back-home {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			color: #ffffff;
+			font-weight: 700;
+			font-size: 14px;
+			text-decoration: none;
+			background: rgba(255, 255, 255, 0.14);
+			padding: 8px 16px;
+			border-radius: 20px;
+			transition: background 0.2s ease;
+		}
+
+		.back-home:hover {
+			background: rgba(255, 255, 255, 0.24);
+		}
+
+		.site-header-title {
+			margin-top: 40px;
+			text-align: center;
+		}
+
+		.site-header-title h1 {
+			margin: 0;
+			color: #c7f44a;
+			font-size: 56px;
+			font-weight: 900;
+			line-height: 1.05;
+			letter-spacing: 0.3px;
+		}
+
+		.site-header-title .eyebrow {
+			display: block;
+			color: #ffffff;
+			font-size: 13px;
+			font-weight: 800;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			margin-bottom: 12px;
+		}
+
+		.header-info-card {
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			transform: translate(-50%, 50%);
+			width: min(640px, calc(100% - 48px));
+			background: #c7f44a;
+			border-radius: 16px;
+			box-shadow: 0 16px 36px rgba(9, 30, 66, 0.28);
+			padding: 22px 30px;
+			z-index: 3;
+		}
+
+		.header-info-card p {
+			margin: 0;
+			color: #0b2a52;
+			font-size: 18px;
+			font-weight: 600;
+			line-height: 1.6;
+		}
+
+		/* ---------- Intro ---------- */
+		.intro-section {
+			padding: 56px 0 8px;
+		}
+
+		.intro-text {
+			max-width: 820px;
+			margin: 0 auto;
+			text-align: center;
+			font-size: 17px;
+			line-height: 1.7;
+			color: #101112;
+		}
+
+		.intro-text p {
+			margin: 0 0 16px;
+		}
+
+		.intro-text p:last-child {
+			margin-bottom: 0;
+		}
+
+		.intro-stats {
+			display: flex;
+			justify-content: center;
+			gap: 40px;
+			flex-wrap: wrap;
+			margin: 36px 0 0;
+		}
+
+		.intro-stat {
+			text-align: center;
+		}
+
+		.intro-stat-num {
+			display: block;
+			font-size: 34px;
+			font-weight: 900;
+			color: #0047af;
+			line-height: 1;
+		}
+
+		.intro-stat-label {
+			display: block;
+			margin-top: 6px;
+			font-size: 13px;
+			font-weight: 700;
+			letter-spacing: 0.3px;
+			text-transform: uppercase;
+			color: #6b6f76;
+		}
+
+		/* ---------- Track quick nav ---------- */
+		.track-nav {
+			position: sticky;
+			top: 0;
+			z-index: 20;
+			background: #ffffff;
+			border-bottom: 1px solid #ececec;
+			padding: 16px 0;
+			margin-top: 108px;
+		}
+
+		.track-nav-inner {
+			display: flex;
+			gap: 12px;
+			overflow-x: auto;
+			padding-bottom: 2px;
+			scrollbar-width: thin;
+		}
+
+		.track-pill {
+			--pill-accent: #0047af;
+			--pill-text: #ffffff;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			flex: 0 0 auto;
+			background: #f4f5f7;
+			color: #101112;
+			text-decoration: none;
+			font-size: 13px;
+			font-weight: 700;
+			padding: 9px 16px 9px 9px;
+			border-radius: 24px;
+			white-space: nowrap;
+			transition: background 0.2s ease, transform 0.2s ease;
+		}
+
+		.track-pill:hover {
+			background: #e9ebef;
+			transform: translateY(-1px);
+		}
+
+		.track-pill-code {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 22px;
+			height: 22px;
+			border-radius: 50%;
+			background: var(--pill-accent);
+			color: var(--pill-text);
+			font-size: 12px;
+			font-weight: 900;
+		}
+
+		/* ---------- Track sections ---------- */
+		.track-section {
+			padding: 64px 0 8px;
+			scroll-margin-top: 76px;
+		}
+
+		#contact {
+			scroll-margin-top: 76px;
+		}
+
+		.track-header {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			margin-bottom: 32px;
+			flex-wrap: wrap;
+		}
+
+		.track-badge {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 48px;
+			height: 48px;
+			border-radius: 50%;
+			font-size: 20px;
+			font-weight: 900;
+			flex: 0 0 auto;
+		}
+
+		.track-name {
+			margin: 0;
+			font-size: 28px;
+			font-weight: 900;
+			color: #101112;
+			line-height: 1.25;
+		}
+
+		.workshop-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+			gap: 24px;
+		}
+
+		.workshop-card {
+			background: #ffffff;
+			border: 1px solid #ececec;
+			border-radius: 16px;
+			padding: 24px;
+			box-shadow: 0 2px 10px rgba(16, 17, 18, 0.04);
+			transition: transform 0.25s ease, box-shadow 0.25s ease;
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		.workshop-card:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 12px 28px rgba(16, 17, 18, 0.09);
+		}
+
+		.workshop-card-top {
+			display: flex;
+			align-items: flex-start;
+			gap: 12px;
+		}
+
+		.workshop-code {
+			flex: 0 0 auto;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 40px;
+			height: 28px;
+			padding: 0 8px;
+			border-radius: 14px;
+			font-size: 13px;
+			font-weight: 900;
+			letter-spacing: 0.3px;
+			margin-top: 2px;
+		}
+
+		.workshop-title {
+			margin: 0;
+			font-size: 19px;
+			font-weight: 800;
+			line-height: 1.35;
+			color: #101112;
+		}
+
+		.workshop-subtitle {
+			display: block;
+			margin-top: 5px;
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 1.4;
+			color: #6b6f76;
+		}
+
+		.workshop-desc {
+			margin: 0;
+			font-size: 15.5px;
+			line-height: 1.65;
+			color: #454850;
+			flex-grow: 1;
+		}
+
+		/* ---------- Footer: Contact Us (matches homepage) ---------- */
+		.site-footer {
+			margin-top: 80px;
+			background-color: #0047af;
+			padding: 48px 0 60px;
+			text-align: center;
+		}
+
+		.site-footer h2 {
+			margin: 0 0 20px;
+			color: #ffffff;
+			font-family: "Lato", Tahoma, Verdana, Segoe, sans-serif;
+			font-size: 38px;
+			font-weight: 900;
+			letter-spacing: normal;
+			line-height: 120%;
+		}
+
+		.footer-social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.footer-social .icon {
+			padding: 0 10px;
+		}
+
+		.footer-social .icon img {
+			max-height: 32px;
+		}
+
+		/* ---------- Reveal-on-scroll (matches homepage) ---------- */
+		.reveal {
+			opacity: 0;
+			transform: translateY(28px);
+			transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+			will-change: opacity, transform;
+		}
+
+		.reveal.is-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.reveal-d1 {
+			transition-delay: 0s;
+		}
+
+		.reveal-d2 {
+			transition-delay: 0.09s;
+		}
+
+		.reveal-d3 {
+			transition-delay: 0.18s;
+		}
+
+		.reveal-d4 {
+			transition-delay: 0.27s;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.reveal {
+				opacity: 1;
+				transform: none;
+				transition: none;
+			}
+		}
+
+		/* ---------- Responsive ---------- */
+		@media (max-width: 768px) {
+			.page-wrap {
+				padding: 0 18px;
+			}
+
+			.site-header {
+				padding: 20px 0 74px;
+			}
+
+			.site-header-title h1 {
+				font-size: 46px;
+			}
+
+			.header-info-card {
+				width: calc(100% - 36px);
+				padding: 14px 18px;
+				border-radius: 14px;
+			}
+
+			.header-info-card p {
+				font-size: 15px;
+			}
+
+			.intro-section {
+				padding: 40px 0 4px;
+			}
+
+			.intro-text {
+				font-size: 15.5px;
+			}
+
+			.intro-stats {
+				gap: 28px;
+			}
+
+			.intro-stat-num {
+				font-size: 26px;
+			}
+
+			.track-nav {
+				top: 0;
+			}
+
+			.track-section {
+				padding: 44px 0 4px;
+			}
+
+			.track-name {
+				font-size: 22px;
+			}
+
+			.workshop-grid {
+				grid-template-columns: 1fr;
+				gap: 16px;
+			}
+
+			.workshop-card {
+				padding: 18px;
+			}
+		}
+	</style>
+	<noscript>
+		<style>
+			.reveal {
+				opacity: 1 !important;
+				transform: none !important;
+			}
+		</style>
+	</noscript>
+</head>
+
+<body>
+	<header class="site-header">
+		<div class="page-wrap">
+			<div class="site-header-top">
+				<a class="back-home" href="./index.html">&larr; Back to Home</a>
+			</div>
+			<div class="site-header-title">
+				<span class="eyebrow">EARC 2027</span>
+				<h1>Workshops</h1>
+				<div class="header-info-card">
+					<p>Workshops take place on Thursday, July 22 (Day 3), 15:00&ndash;17:30. Please indicate your preferred workshop in the registration form.</p>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="page-wrap">
+			<nav class="track-nav" aria-label="Jump to track">
+				<div class="track-nav-inner">
+<a class="track-pill" href="#track-A" style="--pill-accent:#0047af;--pill-text:#ffffff;"><span class="track-pill-code">A</span>Critical Thinking (Biblical and Theological Foundations)</a>
+				<a class="track-pill" href="#track-B" style="--pill-accent:#ea3471;--pill-text:#ffffff;"><span class="track-pill-code">B</span>Growth (Calling and Adulthood)</a>
+				<a class="track-pill" href="#track-C" style="--pill-accent:#c7f44a;--pill-text:#0b2a52;"><span class="track-pill-code">C</span>Spiritual and Emotional Care</a>
+				<a class="track-pill" href="#track-D" style="--pill-accent:#7747FF;--pill-text:#ffffff;"><span class="track-pill-code">D</span>Engaging Society and Culture</a>				</div>
+			</nav>
+
+		<section class="track-section" id="track-A">
+			<div class="track-header reveal">
+				<span class="track-badge" style="background:#0047af;color:#ffffff;">A</span>
+				<h2 class="track-name">Critical Thinking (Biblical and Theological Foundations)</h2>
+			</div>
+			<div class="workshop-grid">
+					<article class="workshop-card reveal reveal-d1">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#0047af;color:#ffffff;">A1</span>
+							<h3 class="workshop-title">When Church and Faith Disappoint</h3>
+						</div>
+						<p class="workshop-desc">Have you ever been hurt by the church or doubted what you believe? You’re not alone, and your hard questions are welcome here. Join us as we talk honestly about church disappointment and discover how to rebuild a honest, lasting faith.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d2">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#0047af;color:#ffffff;">A2</span>
+							<h3 class="workshop-title">How to Think Theologically in Your Life</h3>
+						</div>
+						<p class="workshop-desc">Think theology is just for pastors and thick books? Think again! Discover how asking "Where is God in this?" can transform your daily choices, campus life, and movie nights.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d3">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#0047af;color:#ffffff;">A3</span>
+							<h3 class="workshop-title">Me Too/Church Too: Power Struggles in Churches</h3>
+						</div>
+						<p class="workshop-desc">Abuse, silence, and power plays happen even inside churches—and staying quiet doesn't help. Join us to explore how we can pursue truth, justice, and real healing for those who have been hurt.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d4">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#0047af;color:#ffffff;">A4</span>
+							<h3 class="workshop-title">How to Healthily Navigate Power Structures in the Church and Relationships with Church Leaders</h3>
+						</div>
+						<p class="workshop-desc">How do you respect spiritual authority without losing your own voice? Learn how to set healthy boundaries, handle conflict wisely, and build constructive relationships with church leaders.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d1">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#0047af;color:#ffffff;">A5</span>
+							<h3 class="workshop-title">The Three Worlds Approach to Scripture<span class="workshop-subtitle">The World Before the Text, the World of the Text, and the World After the Text</span></h3>
+						</div>
+						<p class="workshop-desc">Want to bring the Bible to life instead of just reading words on a page? Learn a simple 3-step lens to uncover the history behind the text, the story inside it, and what it means for your life today.</p>
+					</article>
+			</div>
+		</section>
+
+		<section class="track-section" id="track-B">
+			<div class="track-header reveal">
+				<span class="track-badge" style="background:#ea3471;color:#ffffff;">B</span>
+				<h2 class="track-name">Growth (Calling and Adulthood)</h2>
+			</div>
+			<div class="workshop-grid">
+					<article class="workshop-card reveal reveal-d1">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#ea3471;color:#ffffff;">B6</span>
+							<h3 class="workshop-title">Discerning My Vocation</h3>
+						</div>
+						<p class="workshop-desc">Struggling with "What job should I get?" Go deeper! Inspired by Joseph’s story, discover who God created you to be, how your gifts fit in, and whom you are called to live for.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d2">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#ea3471;color:#ffffff;">B7</span>
+							<h3 class="workshop-title">Why School and Work Are Important</h3>
+						</div>
+						<p class="workshop-desc">"Why am I studying this?" If you’ve ever wondered if your major actually matters to God, this workshop is for you! Learn how your studies, late-night cramming, and future job connect to God’s bigger purpose for the world.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d3">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#ea3471;color:#ffffff;">B8</span>
+							<h3 class="workshop-title">Becoming an Adult in Uncertain Times</h3>
+						</div>
+						<p class="workshop-desc">Career anxiety, money stress, moving out, and growing up—adulthood feels scary. Get a practical and biblical survival guide to help you transition into adulthood with confidence.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d4">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#ea3471;color:#ffffff;">B9</span>
+							<h3 class="workshop-title">AI, Work, and Human Dignity</h3>
+						</div>
+						<p class="workshop-desc">Will AI replace your dream job? What actually makes us human when machines do so much? Explore how Christians can face rapid tech changes with hope, purpose, and human dignity.</p>
+					</article>
+			</div>
+		</section>
+
+		<section class="track-section" id="track-C">
+			<div class="track-header reveal">
+				<span class="track-badge" style="background:#c7f44a;color:#0b2a52;">C</span>
+				<h2 class="track-name">Spiritual and Emotional Care</h2>
+			</div>
+			<div class="workshop-grid">
+					<article class="workshop-card reveal reveal-d1">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#c7f44a;color:#0b2a52;">C10</span>
+							<h3 class="workshop-title">How to Cope with Setbacks in Life</h3>
+						</div>
+						<p class="workshop-desc">From broken friendships and harsh rejections to unmet dreams—life can hit hard. Come gain practical tools and biblical wisdom to navigate painful emotions without losing your faith or yourself.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d2">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#c7f44a;color:#0b2a52;">C11</span>
+							<h3 class="workshop-title">Loneliness, Belonging, and the Digital Self</h3>
+						</div>
+						<p class="workshop-desc">Always online, yet feeling completely alone? You're not the only one. Unpack why we feel so lonely in a hyper-connected world and how real community offers a place to truly belong.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d3">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#c7f44a;color:#0b2a52;">C12</span>
+							<h3 class="workshop-title">Healthy Relationships and Communication in the University</h3>
+						</div>
+						<p class="workshop-desc">Navigating campus friendships, dating, and setting boundaries can be tricky. Build a solid biblical framework to communicate clearly, resolve conflicts, and grow healthy relationships.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d4">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#c7f44a;color:#0b2a52;">C13</span>
+							<h3 class="workshop-title">Holistic Family Connections</h3>
+						</div>
+						<p class="workshop-desc">Dealing with helicopter parents or constant family tension? Learn how to honor your parents while setting healthy boundaries and breaking free from toxic dynamics as an independent adult.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d1">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#c7f44a;color:#0b2a52;">C14</span>
+							<h3 class="workshop-title">AI as a Counselling Tool</h3>
+						</div>
+						<p class="workshop-desc">Turning to ChatGPT for emotional support late at night? Explore the rise of AI mental health tools, where they help, where they fall short, and how they challenge human spiritual care.</p>
+					</article>
+			</div>
+		</section>
+
+		<section class="track-section" id="track-D">
+			<div class="track-header reveal">
+				<span class="track-badge" style="background:#7747FF;color:#ffffff;">D</span>
+				<h2 class="track-name">Engaging Society and Culture</h2>
+			</div>
+			<div class="workshop-grid">
+					<article class="workshop-card reveal reveal-d1">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#7747FF;color:#ffffff;">D15</span>
+							<h3 class="workshop-title">Witnessing Christ in the University<span class="workshop-subtitle">Engaging the University</span></h3>
+						</div>
+						<p class="workshop-desc">How can you live out your faith naturally on campus without sounding preachy? Get equipped with practical tools and courage to represent Christ and share hope in your university context.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d2">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#7747FF;color:#ffffff;">D16</span>
+							<h3 class="workshop-title">Power, Politics, and the Christian Witness</h3>
+						</div>
+						<p class="workshop-desc">Wars, elections, and national tensions—how should followers of Jesus navigate political chaos? Learn how to care about justice and peace while keeping our ultimate loyalty to God’s kingdom.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d3">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#7747FF;color:#ffffff;">D17</span>
+							<h3 class="workshop-title">Individualism, Secularism, and the Self</h3>
+						</div>
+						<p class="workshop-desc">Caught between Asian family expectations ("do what's best for the family") and Western self-expression ("do whatever makes you happy")? Discover how the Gospel offers a better way to find yourself.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d4">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#7747FF;color:#ffffff;">D18</span>
+							<h3 class="workshop-title">International Students and Belonging Across Borders</h3>
+						</div>
+						<p class="workshop-desc">Are you studying abroad as an international student, or a local student looking to make global friends on campus? Come connect! Together, we’ll discover how international students’ unique "exile" journeys and local students' radical hospitality can create a vibrant, cross-cultural community where everyone truly belongs.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d1">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#7747FF;color:#ffffff;">D19</span>
+							<h3 class="workshop-title">Social Media and Gospel Witness</h3>
+						</div>
+						<p class="workshop-desc">Can your Instagram, TikTok, or social media posts actually point people to Jesus? Learn creative ways to use digital spaces to share hope, practice authenticity, and be a light online.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d2">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#7747FF;color:#ffffff;">D20</span>
+							<h3 class="workshop-title">Responding to Different Faiths in a Diverse World</h3>
+						</div>
+						<p class="workshop-desc">Surrounded by friends with totally different religions or worldviews? Learn how to share your convictions with courage and humility, moving beyond passive "tolerance" to genuine conversation.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d3">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#7747FF;color:#ffffff;">D21</span>
+							<h3 class="workshop-title">Gender Identity Across the World</h3>
+						</div>
+						<p class="workshop-desc">Gender issues are viewed differently across East Asia and the world. Explore how Christians in different contexts face these conversations with biblical truth, cultural sensitivity, and grace.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d4">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#7747FF;color:#ffffff;">D22</span>
+							<h3 class="workshop-title">Power and Creation Care</h3>
+						</div>
+						<p class="workshop-desc">Environmental crises aren't just science problems—they are justice and power issues. Discover how caring for God’s creation challenges greed and systemic exploitation in today’s world.</p>
+					</article>
+					<article class="workshop-card reveal reveal-d1">
+						<div class="workshop-card-top">
+							<span class="workshop-code" style="background:#7747FF;color:#ffffff;">D23</span>
+							<h3 class="workshop-title">Trauma Issues: Personal and Social</h3>
+						</div>
+						<p class="workshop-desc">Deep personal heartbreak and collective societal trauma run deep. Learn how faith communities can become safe places for emotional honesty, healing, and restoring justice.</p>
+					</article>
+			</div>
+		</section>
+		</div>
+	</main>
+
+	<footer class="site-footer" id="contact">
+		<div class="page-wrap">
+			<h2 class="reveal">Contact Us</h2>
+			<div class="footer-social reveal reveal-d2">
+				<span class="icon"><a href="https://www.facebook.com/profile.php?id=61592580462582" target="_self"><img alt="Facebook" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/facebook@2x.png" title="facebook" /></a></span>
+				<span class="icon"><a href="https://www.instagram.com/earc2027" target="_self"><img alt="Instagram" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" title="instagram" /></a></span>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+	(function () {
+		"use strict";
+		var targets = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+		if (!targets.length) { return; }
+
+		if (!("IntersectionObserver" in window)) {
+			targets.forEach(function (el) { el.classList.add("is-visible"); });
+			return;
+		}
+
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("is-visible");
+					io.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+
+		targets.forEach(function (el) { io.observe(el); });
+
+		// Safety net: elements pinned right at the bottom of a short page
+		// (e.g. the Contact Us icons) can sit just outside the shrunk
+		// trigger zone above and never get a chance to intersect once the
+		// page is already scrolled as far as it goes. Catch anything still
+		// unrevealed once the user reaches (or starts at) the bottom.
+		function revealIfAtBottom() {
+			var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+			if (!atBottom) { return; }
+			targets.forEach(function (el) {
+				if (!el.classList.contains("is-visible")) {
+					el.classList.add("is-visible");
+					io.unobserve(el);
+				}
+			});
+		}
+		window.addEventListener("scroll", revealIfAtBottom, { passive: true });
+		window.addEventListener("resize", revealIfAtBottom);
+		revealIfAtBottom();
+	})();
+	</script>
+</body>
+
+</html>
